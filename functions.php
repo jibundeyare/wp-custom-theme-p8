@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * composer
+ */
+
+// chargement de l'autoloading de composer
 require get_template_directory().'/vendor/autoload.php';
 
 /**
