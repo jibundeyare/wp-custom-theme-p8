@@ -15,7 +15,7 @@ if ( have_posts() ):
     <?php
 endif;
 
-// affichez la liste des posts
+// Les paramètres de la requête WP_QUery
 $args = array(
     // Sélection de tous les posts
     'post_type' => 'post',
