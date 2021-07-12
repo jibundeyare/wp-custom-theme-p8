@@ -7,12 +7,9 @@ get_header();
 // La boucle normale
 if ( have_posts() ):
     the_post();
-    ?>
-    <article>
-        <h1><?php the_title(); ?></h1>
-        <div><?php the_content(); ?></div>
-    </article>
-    <?php
+
+    // Le contenu du bloc entête
+    get_template_part('header', 'page');
 endif;
 
 // Les paramètres de la requête WP_QUery
@@ -28,17 +25,9 @@ $query = new WP_Query( $args );
 if ( $query->have_posts() ):
     while ( $query->have_posts() ):
         $query->the_post();
-        ?>
-        <article>
-            <h2><?php the_title(); ?></h2>
-            <div><?php the_time( get_option( 'date_format' ) ); ?></div>
-            <?php
-            if ( has_post_thumbnail() ):
-                the_post_thumbnail( 'medium' );
-            endif;
-            ?>
-        </article>
-        <?php
+
+        // La boucle
+        get_template_part('loop', 'post');
     endwhile;
 endif;
 
