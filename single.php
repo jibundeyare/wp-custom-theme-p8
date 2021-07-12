@@ -14,6 +14,10 @@ if ( have_posts() ):
         endif;
         ?>
         <div><?php the_content(); ?></div>
+        <?php the_tags( '<ul><li>', '</li><li>', '</li></ul>' ); ?>
+        <div>
+            <?php the_category( ', ' ); ?>
+        </div>
     </article>
     <?php
 endif;

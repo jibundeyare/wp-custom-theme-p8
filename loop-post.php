@@ -8,4 +8,8 @@
         endif;
         ?>
     </a>
+    <?php the_tags( '<ul><li>', '</li><li>', '</li></ul>' ); ?>
+    <div>
+        <?php the_category( ', ' ); ?>
+    </div>
 </article>
