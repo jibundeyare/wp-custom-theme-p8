@@ -61,3 +61,12 @@ add_theme_support( 'html5' );
 add_theme_support( 'title-tag' );
 // activation de la fonctionnalité des vignettes
 add_theme_support( 'post-thumbnails' );
+
+/**
+ * médias
+ */
+
+// fixe la largeur maximum des images utilisées par le site
+if ( !isset( $content_width ) ) {
+    $content_width = 800;
+}

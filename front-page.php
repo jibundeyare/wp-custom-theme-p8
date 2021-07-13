@@ -1,6 +1,6 @@
 <?php
 
-// page d'accueil
+// Page d'accueil
 
 get_header();
 
@@ -8,7 +8,7 @@ get_header();
 if ( have_posts() ):
     the_post();
 
-    // Le contenu du bloc entête
+    // Template du contenu du bloc entête
     get_template_part('header', 'page');
 endif;
 
@@ -26,7 +26,7 @@ if ( $query->have_posts() ):
     while ( $query->have_posts() ):
         $query->the_post();
 
-        // La boucle
+        // Template de la partie commune de la boucle des posts
         get_template_part('loop', 'post');
     endwhile;
 endif;

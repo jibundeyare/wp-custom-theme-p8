@@ -1,6 +1,6 @@
 <?php
 
-// liste des posts
+// Liste des posts
 
 get_header();
 
@@ -19,7 +19,7 @@ $query = new WP_Query( $args );
 if ( $query->have_posts() ):
     $query->the_post();
 
-    // Le contenu du bloc entête
+    // Template du contenu du bloc entête
     get_template_part('header', 'page');
 endif;
 
@@ -31,7 +31,7 @@ if ( have_posts() ):
     while (have_posts()):
         the_post();
 
-        // La boucle
+        // Template de la partie commune de la boucle des posts
         get_template_part('loop', 'post');
     endwhile;
 endif;

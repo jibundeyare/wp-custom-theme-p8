@@ -3,13 +3,17 @@
     <div><?php the_time( get_option( 'date_format' ) ); ?></div>
     <a href="<?= get_permalink(); ?>">
         <?php
+        // Affichage de la vignette
         if ( has_post_thumbnail() ):
             the_post_thumbnail( 'medium' );
         endif;
         ?>
     </a>
-    <?php the_tags( '<ul><li>', '</li><li>', '</li></ul>' ); ?>
-    <div>
-        <?php the_category( ', ' ); ?>
-    </div>
+    <?php
+    // Affichage des tags dans une liste
+    the_terms( $post->ID, 'post_tag', '<ul><li>', '</li><li>', '</li></ul>' );
+
+    // Affichage des catégories dans une liste
+    the_terms( $post->ID, 'category', '<ul><li>', '</li><li>', '</li></ul>' );
+    ?>
 </article>
